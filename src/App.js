@@ -1,24 +1,26 @@
 import logo from './logo.svg';
-import './App.css';
+import { GlobalStyle } from './assets/styles/globalStyles';
+import { theme } from './assets/styles/theme';
+import styled, { ThemeProvider } from 'styled-components';
+import { BrowserRouter as Router } from 'react-router-dom';
+import MainTemplate from './components/templates/MainTemplate';
+
+const Wrapper = styled.div`
+  background-color: ${({ theme }) => theme.colors.white};
+  height: auto;
+  max-width: 100%;
+
+  margin: 0;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Wrapper>
+        <MainTemplate></MainTemplate>
+      </Wrapper>
+    </ThemeProvider>
   );
 }
 
