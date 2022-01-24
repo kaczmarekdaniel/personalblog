@@ -16,6 +16,21 @@ const DraggableCategories = styled.div`
   flex-direction: row;
   padding: 0;
   z-index: 1;
+  padding: 0 1% 0 1%;
+  @media screen and (min-width: 1000px) {
+    padding: 0;
+  }
+`;
+
+const Title = styled.h1`
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    font-size: 1.2rem;
+  }
+  padding: 0 1% 0 1%;
+
+  @media screen and (min-width: 1000px) {
+    padding: 0;
+  }
 `;
 
 const Pages = styled.div`
@@ -45,6 +60,10 @@ const CategoryButton = styled(NavLink).attrs({ activeClassName })`
   &.${activeClassName} {
     border-bottom: 2px solid black;
   }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    font-size: 0.9rem;
+  }
 `;
 
 const ArrowLeftButton = styled.button`
@@ -62,6 +81,9 @@ const ArrowLeftButton = styled.button`
   line-height: 24px;
   border-bottom: 2px solid transparent;
   opacity: 1;
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    font-size: 0.9rem;
+  }
 `;
 
 const BlogContentNavigation = (props) => {
@@ -82,7 +104,7 @@ const BlogContentNavigation = (props) => {
   }, []);
   return (
     <>
-      <h1>Recent posts</h1>
+      <Title>Recent posts</Title>
       <DraggableCategories className="wrapper" ref={wrapper}>
         <ArrowLeftButton ref={arrow}>
           <MdKeyboardArrowLeft />

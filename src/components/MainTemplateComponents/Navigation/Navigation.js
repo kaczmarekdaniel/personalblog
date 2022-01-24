@@ -29,10 +29,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0 1% 0 1%;
 
   @media only screen and (min-width: 1024px) {
     flex-wrap: nowrap;
     justify-content: flex-start;
+    padding: 0;
     align-items: center;
   }
 `;
@@ -109,6 +111,14 @@ const ArticlesPropositions = styled.div`
 const ArticleLink = styled(Link)`
   color: ${({ theme }) => theme.colors.primaryGrey};
   margin: 5px 0 5px 0;
+  height: auto;
+`;
+
+const ArticleLinkSkeleton = styled.div`
+  background-color: ${({ theme }) => theme.colors.primaryGrey};
+  margin: 5px 0 5px 0;
+  width: 100%;
+  height: 25%;
   height: auto;
 `;
 

@@ -15,6 +15,15 @@ const Wrapper = styled.div`
   font-style: light;
   position: relative;
   color: ${({ theme }) => theme.colors.primaryGrey};
+  margin-top: 25%;
+  flex-direction: column-reverse;
+  padding-top: 25%;
+  @media screen and (min-width: 1000px) {
+    margin-top: 0%;
+    padding-top: 0%;
+
+    flex-direction: row;
+  }
 `;
 const Circle = styled.div`
   width: 64px;
@@ -37,7 +46,7 @@ const Circle = styled.div`
 const Footer = (props) => {
   return (
     <Wrapper>
-      <p>copyright xdd</p>
+      <p>copyright Daniel Kaczmarek</p>
       <Circle>
         <MdKeyboardArrowUp className="icon" />
       </Circle>
@@ -45,7 +54,5 @@ const Footer = (props) => {
     </Wrapper>
   );
 };
-
-Footer.propTypes = {};
 
 export default Footer;

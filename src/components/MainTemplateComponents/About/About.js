@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   text-align: left;
   color: ${({ theme }) => theme.colors.primaryGrey};
   font-style: normal;
+  margin-top: 25%;
   h1 {
     font-weight: 400;
     font-size: 24px;
@@ -25,6 +26,19 @@ const Wrapper = styled.div`
     font-weight: 200;
     color: ${({ theme }) => theme.colors.primaryGrey};
     line-height: 1.5;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    h1 {
+      font-size: 1.2rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    margin-top: 0%;
   }
 `;
 

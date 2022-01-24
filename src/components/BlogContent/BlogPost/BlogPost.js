@@ -13,13 +13,11 @@ const Wrapper = styled.article`
   align-items: flex-start;
   flex-wrap: nowrap;
   padding: 20px;
-
   &:last-of-type {
     border-bottom: none;
   }
   @media only screen and (min-width: 1024px) {
-    height: 20%;
-    min-height: 1%;
+    min-height: 20%;
 
     padding: 0;
   }
@@ -41,6 +39,9 @@ const ArticleTitle = styled.h2`
     font-size: 24px;
   }
 
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    font-size: 1rem;
+  }
   button {
     background-color: transparent;
     border: none;
@@ -75,7 +76,7 @@ const LinkTo = styled(Link)`
   color: ${({ theme }) => theme.colors.primaryGrey};
 `;
 
-const BlogPost = ({ postData }) => {
+const BlogPost = ({ postData, show = true }) => {
   return (
     <Wrapper>
       <ArticleTitle>
@@ -83,14 +84,7 @@ const BlogPost = ({ postData }) => {
 
         <LinkTo to={`/blog/${postData.urltext}`}>{postData.title}</LinkTo>
       </ArticleTitle>
-      <TagWrapper>
-        <Tags>
-          <PostTag>#designThinking</PostTag>
-          <PostTag>#Design</PostTag>
-          <PostTag>#HCI</PostTag>
-          <PostTag>#Usability</PostTag>
-        </Tags>
-      </TagWrapper>
+      <TagWrapper>{show ? <></> : <></>}</TagWrapper>
     </Wrapper>
   );
 };

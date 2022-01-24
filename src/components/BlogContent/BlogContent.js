@@ -27,7 +27,6 @@ const Wrapper = styled.div`
   h1 {
     color: ${({ theme }) => theme.colors.primaryGrey};
     font-weight: 400;
-    font-size: 24px;
     line-height: 1.5;
     margin-bottom: 24px;
     margin-top: 40px;

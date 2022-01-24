@@ -7,8 +7,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 import BlogContent from '../../BlogContent/BlogContent';
-import BlogPost from '../../BlogContent/BlogPost/BlogPost';
-
+import HomeSection from '../HomeSection/HomeSection';
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
@@ -39,7 +38,9 @@ const Content = (props) => {
           <Redirect to="/home" />
         </Route>
         <Route path="/home">
-          <Wrapper className="flexColumn">home</Wrapper>
+          <Wrapper className="flexColumn">
+            <HomeSection />
+          </Wrapper>
         </Route>
         <Route path="/blog">
           <Wrapper className="flexColumn">

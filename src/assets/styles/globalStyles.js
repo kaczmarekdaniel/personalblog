@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
 html {
     box-sizing:border-box;
     max-width:100vw;
+    scroll-behaviour: smooth;
     } 
 
 *, *::after, *::before {
